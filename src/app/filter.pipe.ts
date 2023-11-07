@@ -1,7 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+// To make a custom pipe impure we need to pass pure key to the Pipe decorator and set it's value to false
+// Angular by default will not re-run pipe whenever the data is ChangeDetectionStrategy.The pipe will only run whenever it's input changes
 @Pipe({
-  name: 'filter'
+  name: 'filter',
+  pure: false
 })
 export class FilterPipe implements PipeTransform {
 
