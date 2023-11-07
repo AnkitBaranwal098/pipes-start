@@ -33,6 +33,15 @@ export class AppComponent {
     }
   ];
   searchedText = ''
+  addServer = ()=>{
+    console.log("Click Trigerred!!!")
+    this.servers.push({
+      instanceType: 'small',
+      name: 'Ankit Server',
+      status: 'stable',
+      started: new Date(16, 1, 2023)
+    })
+  }
   getStatusClasses(server: {instanceType: string, name: string, status: string, started: Date}) {
     return {
       'list-group-item-success': server.status === 'stable',
@@ -40,4 +49,5 @@ export class AppComponent {
       'list-group-item-danger': server.status === 'critical'
     };
   }
+
 }
